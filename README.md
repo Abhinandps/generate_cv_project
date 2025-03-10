@@ -16,11 +16,23 @@ A  web application that allows users to input their CV details, save them to a d
    cd client
    cd server
    ```
-2. Install dependencies:  
+2. Install dependencies:
+   
+cleint
+  ```sh
+pnpm install 
+```
+
+server
    ```sh
    npm install
    ```
-3. Run the project:  
+4. Run the project:
+
+    ```sh
+   pnpm start
+   ```
+    
    ```sh
    npm start
    ```
