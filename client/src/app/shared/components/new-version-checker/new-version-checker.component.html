@@ -1,0 +1,11 @@
+<div *ngIf="newVersionCheckerService.isNewVersionAvailable">
+  <div class="version-container">
+    <img src="assets/icons/refresh.svg" alt="" />
+    <div class="content">
+      {{ updatesMessage.UPDATE_CHECKER_TITLE }}
+      <span class="description" (click)="applyUpdate()">
+        {{ updatesMessage.UPDATE_CHECKER_INFORMATION }}
+      </span>
+    </div>
+  </div>
+</div>

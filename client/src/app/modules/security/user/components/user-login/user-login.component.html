@@ -1,0 +1,48 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<div class="container">
+  <div class="card">
+    <div class="card-head">
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+        <div class="form-group">
+          <div class="input-container">
+            <i class="fas fa-user usericon"></i>
+            <input type="text" formControlName="username" id="username" class="form-control" placeholder="Username" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-container">
+            <i class="fas fa-lock usericon"></i>
+            <input
+              type="password"
+              id="password"
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              class="form-control"
+              placeholder="Password"
+            />
+            <span class="eye-icon icon-lock" (click)="togglePassword()">
+              <i class="fas fa-eye" *ngIf="!showPassword"></i>
+              <i class="fas fa-eye-slash" *ngIf="showPassword"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <span class="text-muted small cursor-pointer" (click)="navigateToForgotPassword()">Forgot password?</span>
+        </div>
+
+        <div class="btn-div">
+          <button type="submit" class="btn btn-dark p-2" [disabled]="isWaiting">
+            {{ isWaiting ? 'sign in...' : 'Login' }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="this.errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

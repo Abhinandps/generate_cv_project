@@ -1,0 +1,29 @@
+<div *ngIf="isOpen" class="modal" [ngClass]="{ show: isOpen }">
+  <div class="modal-content" [ngClass]="{ show: isOpen }">
+    <span class="close" (click)="close()">&times;</span>
+
+    <div *ngIf="loading" class="loader-overlay">
+      <div class="loader">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="loading-percentage">{{ loadingPercentage }}%</div>
+    </div>
+
+    <pdf-viewer
+      [fit-to-page]="true"
+      (after-load-complete)="onPdfLoad()"
+      (on-progress)="onProgress($event)"
+      id="pdfFrame"
+      [src]="pdfUrl"
+      type="application/pdf"
+      style="width: 100%; height: 500px"
+    >
+    </pdf-viewer>
+    <div>
+      <button class="modal-buttons" (click)="downloadPdf()">Download</button>
+    </div>
+  </div>
+</div>

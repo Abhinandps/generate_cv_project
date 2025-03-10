@@ -1,0 +1,12 @@
+<div class="toaster">
+  <div *ngFor="let message of messages" [ngClass]="'toaster-' + message.type">
+    <div class="toaster-container">
+      <button class="close-btn" (click)="removeMessage(message.id)">×</button>
+      <div class="icon">{{ getIcon(message.type) }}</div>
+      <div class="content">
+        <div class="message-type">{{ getTypeText(message.type) }}</div>
+        <strong>{{ message.message }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

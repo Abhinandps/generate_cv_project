@@ -1,0 +1,53 @@
+<div class="maindiv">
+  <div class="row mt-4">
+    <h2 class="heading">User List</h2>
+    <hr class="mb-3" />
+    <div class="col-md-3">
+      <app-search (search)="onSearch($event)"></app-search>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3 d-flex justify-content-end">
+      <button class="btn addbtn" (click)="addUser()">Add New User</button>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <app-table
+        [tableData]="formattedUsers"
+        (openDeleteConfirmation)="openDeleteConfirmationModal($event)"
+        (openEditConfirmation)="openEditConfirmationModal($event)"
+        (deleteOperation)="deleteUser($event)"
+        (viewOperation)="viewUser($event)"
+        (editOperation)="editUser($event)"
+        (addOperation)="addUser()"
+      ></app-table>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <app-pagination
+        [totalItems]="totalItems"
+        [itemsPerPage]="itemsPerPage"
+        [currentPage]="currentPage"
+        (pageChanged)="onPageChanged($event)"
+      >
+      </app-pagination>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+      <app-items-per-page
+        [selectedItemsPerPage]="itemsPerPage1"
+        (itemsPerPageChanged)="onItemsPerPageChanged($event)"
+      ></app-items-per-page>
+    </div>
+  </div>
+
+  <app-generic-modal [isVisible]="!!templateHtml" (closeModal)="closeModal()">s
+    <app-html-preview
+    [htmlContent]="templateHtml"
+    ></app-html-preview>
+  </app-generic-modal>
+
+</div>

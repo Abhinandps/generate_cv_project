@@ -1,0 +1,23 @@
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  background-color: #f0f0f0;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hide {
+  display: none;
+}

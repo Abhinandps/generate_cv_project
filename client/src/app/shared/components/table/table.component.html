@@ -1,0 +1,91 @@
+<app-custom-modal
+  [isOpen]="isModalOpen"
+  [modalTitle]="modalTitle"
+  [modalContent]="modalContent"
+  [confirmBtn]="confirmBtn"
+  (okClicked)="handleOkClicked()"
+  (modalClosed)="handleModalClosed()"
+></app-custom-modal>
+<div class="table-container" style="border-radius: 10px 10px 0 0; border: 1px solid #ddd">
+  <table class="table" style="margin-bottom: 0" *ngIf="tableHeaders">
+    <thead class="text-white" style="text-transform: uppercase; height: 50px; z-index: 1">
+      <tr>
+        <th *ngFor="let header of tableHeaders; let i = index" [hidden]="isColumnHidden(header)">
+          <ng-container *ngIf="i === 1 && isCheckBoxShown; else defaultHeader">
+            <div class="checkboxes__item">
+              <label class="checkbox style-c">
+                <input
+                  [checked]="isSelectAllChecked"
+                  type="checkbox"
+                  [id]="'header-' + i"
+                  (change)="onSelectAllToggle($event)"
+                />
+                <div class="checkbox__checkmark"></div>
+                <div>{{ header }}</div>
+              </label>
+            </div>
+          </ng-container>
+          <ng-template #defaultHeader>
+            {{ header }}
+          </ng-template>
+        </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container>
+        <app-custom-bar-loader [loading]="isLoading"></app-custom-bar-loader>
+      </ng-container>
+      <tr *ngFor="let row of tableData">
+        <td *ngFor="let key of tableHeaders; let i = index" [hidden]="isColumnHidden(key)">
+          <app-status-indicator *ngIf="isStatusColumn(key)" [status]="row[key]"></app-status-indicator>
+          <ng-container *ngIf="!isStatusColumn(key)">
+            <ng-container *ngIf="i === 1 && isCheckBoxShown; else defaultHeader">
+              <div class="checkboxes__item">
+                <label class="checkbox style-c">
+                  <input
+                    [checked]="checkedItems.has(row._id)"
+                    type="checkbox"
+                    [id]="'header-' + i"
+                    (change)="onCheckboxToggle($event, row._id)"
+                  />
+                  <div class="checkbox__checkmark"></div>
+                  <div class="checkbox__body">{{ row[key] }}</div>
+                </label>
+              </div>
+            </ng-container>
+            <ng-template #defaultHeader>
+              {{ row[key] }}
+            </ng-template>
+          </ng-container>
+        </td>
+        <td class="action">
+          <button
+            class="action-btn view-btn"
+            *ngIf="isActionVisible(ActionType.View)"
+            (click)="view(row._id)"
+            title="View"
+          >
+            <i class="fas fa-eye" style="font-size: 15px"></i>
+          </button>
+          <button
+            *ngIf="isActionVisible(ActionType.Edit)"
+            class="action-btn edit-btn"
+            (click)="openEditConfirmationModal(row)"
+            title="Edit"
+          >
+            <i class="fas fa-edit" style="font-size: 15px"></i>
+          </button>
+          <button
+            *ngIf="isActionVisible(ActionType.Delete)"
+            class="action-btn delete-btn"
+            (click)="openDeleteConfirmationModal(row)"
+            title="Delete"
+          >
+            <i class="fas fa-trash-alt" style="font-size: 15px"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

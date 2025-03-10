@@ -1,0 +1,36 @@
+.items-per-page {
+  display: inline-block;
+}
+.dropdown-menu {
+  padding: 0;
+}
+.dropdown-item {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #4a4949;
+  color: white;
+}
+.btn {
+  background-color: black;
+  color: white;
+}
+.maindiv {
+  position: relative;
+}
+
+.dropdown-menu {
+  padding: 0;
+  max-height: 100px;
+  overflow-y: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.dropdown-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}

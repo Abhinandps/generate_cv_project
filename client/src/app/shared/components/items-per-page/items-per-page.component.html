@@ -1,0 +1,8 @@
+<div class="maindiv">
+  <button class="btn" (click)="toggleDropdown()">Items per page: {{ selectedItemsPerPage }}</button>
+  <div class="dropdown-menu" [ngClass]="{ show: showDropdown }">
+    <a class="dropdown-item" *ngFor="let item of itemsPerPageOptions" (click)="onItemsPerPageChange(item)">
+      {{ item }} items per page
+    </a>
+  </div>
+</div>

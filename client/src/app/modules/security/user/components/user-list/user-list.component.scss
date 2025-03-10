@@ -1,0 +1,74 @@
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin: 100px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.add-btn {
+  margin-top: 40px;
+  margin-left: 70px;
+  width: 200px;
+}
+.user-table th,
+.user-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #0c0b0b;
+}
+.addbtn {
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 50px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.maindiv {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 5px;
+}
+.heading {
+  color: #333;
+}
+.user-table thead {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.user-table th {
+  text-transform: uppercase;
+}
+
+.user-table .action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 2px;
+}
+
+.user-table .view-btn {
+  color: #060606;
+}
+
+.user-table .edit-btn {
+  color: #060606;
+}
+
+.user-table .delete-btn {
+  color: #e21126;
+}
+
+.user-table .action-btn:hover {
+  opacity: 0.7;
+}
+
+.user-table i {
+  font-size: 1.2em;
+}

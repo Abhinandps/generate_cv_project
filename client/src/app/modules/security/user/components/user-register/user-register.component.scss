@@ -1,0 +1,59 @@
+input[type='text'],
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='tel'],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+  background-color: white;
+}
+:focus {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+div[ngIf] {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+.user-contianer {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.heading {
+  color: #333;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #030303;
+  cursor: pointer;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #515251;
+}
+.btnsubmit {
+  margin-right: 10px;
+  height: 45px;
+  width: 150px;
+}
+.btncancel {
+  height: 45px;
+  width: 150px;
+}

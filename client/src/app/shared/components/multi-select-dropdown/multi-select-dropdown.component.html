@@ -1,0 +1,48 @@
+<div class="container mt-2 multi-select-dropdown">
+  <div class="selected-items" id="selected-items">
+    <span *ngFor="let id of selectedIds" class="badge bg-black me-2 p-2">
+      {{ getSelectedItemName(id) }}
+      <span class="ms-2" style="cursor: pointer" (click)="removeSelectedId(id)">&times;</span>
+    </span>
+  </div>
+
+  <div class="dropdown">
+    <button
+      class="btn btn-outline-dark dropdown-toggle w-100"
+      type="button"
+      id="dropdownMenuButton"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    ></button>
+
+    <ul class="dropdown-menu p-3 w-100" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-header">
+        <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search..." />
+      </div>
+      <li *ngFor="let item of filteredItems" class="p-2">
+        <div class="form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            [checked]="isParentSelected(item.id)"
+            (change)="toggleItem(item)"
+          />
+          <label class="form-check-label fw-bold">{{ item.name }}</label>
+        </div>
+        <ul class="dropdown-menu p-3 w-100" *ngIf="item.children && item.children.length > 0" class="ms-3">
+          <li *ngFor="let child of item.children" class="p-2">
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                [checked]="isSelected(child.id)"
+                (change)="toggleChild(item, child)"
+              />
+              <label class="form-check-label fw-light">{{ child.name }}</label>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

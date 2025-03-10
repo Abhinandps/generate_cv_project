@@ -1,0 +1,5 @@
+@mixin font-style($weight, $size, $italic: false) {
+  font-weight: $weight;
+  font-style: if($italic, italic, normal);
+  font-size: $size;
+}

@@ -1,0 +1,45 @@
+// COLORS
+$black: #000000;
+$white: #ffffff;
+$gray-1: #ececec;
+$gray-2: #cbcbcb;
+$gray-3: #f8f8f8;
+$background: whitesmoke;
+$very-dark-gray: #202020;
+$light-yellow: #e0cf3e;
+$pomegranate: #c0392b;
+$dimgray: dimgray;
+
+// TYPOGRAPHY
+$font-family: 'Poppins', sans-serif;
+$font-size-base: 16px;
+$spacing-unit: 1rem;
+
+// OTHERS
+$border-radius: 6px;
+$padding: 1em 1.5em;
+$max-width: 2000px;
+
+:root {
+  // COLORS
+  --primary-color: #{$black};
+  --secondary-color: #{$white};
+  --dimgray: #{$dimgray};
+  --gray-1: #{$gray-1};
+  --gray-2: #{$gray-2};
+  --gray-3: #{$gray-3};
+  --very-dark-gray: #{$very-dark-gray};
+  --light-yellow: #{$light-yellow};
+  --pomegranate: #{$pomegranate};
+  --background-color: #{$background};
+
+  // TYPOGRAPHY
+  --font-family: #{$font-family};
+  --font-size: #{$font-size-base};
+  --spacing: #{$spacing-unit};
+
+  // OTHERS
+  --padding: #{$padding};
+  --max-width: #{$max-width};
+  --border-radius: #{$border-radius};
+}

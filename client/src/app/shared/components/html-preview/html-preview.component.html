@@ -1,0 +1,7 @@
+<div class="html-preview-container">
+  <div [innerHTML]="sanitizedHtml"></div>
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-dark me-2" (click)="onPrintClick($event)">Print</button>
+    <button class="btn btn-secondary" (click)="onDownload($event)">Download</button>
+  </div>
+</div>

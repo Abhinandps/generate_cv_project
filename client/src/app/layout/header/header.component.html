@@ -1,0 +1,49 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<header class="wrapper">
+  <div class="header my-lg-2">
+    <div class="logo">
+      <div class="group">
+        <img class="d-lg-none d-block" src="assets/icons/menu_icon.svg" alt="Menu" (click)="toggleMenu()" />
+      </div>
+
+      <nav class="nav" [@slideAnimation]="isSmallDevice && menuState">
+        <ul>
+          <img
+            class="menu_close d-lg-none d-sm-block"
+            src="assets/icons/menu_close.svg"
+            alt="Menu Close"
+            (click)="toggleMenu()"
+          />
+          <li class="d-lg-none d-block"></li>
+          <li *ngFor="let item of navItems">
+            <span *appHasPermissions="item.permission">
+              <a *ngIf="!item.submenu" [routerLink]="item.link" [class.active]="item.isActive">
+                {{ item.title }}
+              </a>
+            </span>
+            <div *ngIf="item.submenu" class="dropdown">
+              <a class="dropdown-toggle" (click)="toggleDropdown(item)" *appHasPermissions="item.permission">
+                {{ item.title }}
+              </a>
+              <ul class="dropdown-menu" *ngIf="item.isOpen">
+                <li *ngFor="let subItem of item.submenu">
+                  <a class="dropdown-item" [routerLink]="subItem.link" [class.active]="isActive(subItem.link)">
+                    {{ subItem.title }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="user-group">
+      <div class="user-info">
+        <p *ngIf="userName">Hi, {{ userName }}!</p>
+      </div>
+      <app-avatar [userName]="userName" (click)="triggerMenu()"></app-avatar>
+    </div>
+  </div>
+</header>

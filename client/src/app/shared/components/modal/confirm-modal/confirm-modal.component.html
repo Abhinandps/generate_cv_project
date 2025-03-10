@@ -1,0 +1,14 @@
+<div class="modal-content">
+  <h1 mat-dialog-title>⚠️ {{ data.title }}</h1>
+  <div mat-dialog-content>
+    <p>
+      <i>{{ data.message }}</i>
+    </p>
+  </div>
+  <div mat-dialog-actions>
+    <button class="btn btn-secondary" mat-button (click)="onCancel()">Cancel</button>
+    <button class="btn btn-confirm" *ngIf="data.showConfirmButton" mat-button (click)="onConfirm()">
+      Yes, Proceed
+    </button>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.lockicon {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: grey;
+}
+.usericon {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: grey;
+}
+.card-head {
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.card-body {
+  padding: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: none;
+  background-color: #fff;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+input:-webkit-autofill {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  color: black !important;
+}
+
+input:-internal-autofill-selected {
+  background-color: white !important;
+  color: black !important;
+}
+
+input:-moz-autofill {
+  background-color: white !important;
+  color: black !important;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white !important;
+  color: black !important;
+  box-shadow: none;
+}
+
+.btn-div {
+  margin-top: 40px;
+}
+button[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background-color: #444;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.input-container i {
+  position: absolute;
+  top: 12px;
+  color: grey;
+  z-index: 1;
+}
+
+.input-container .fa-lock {
+  left: 10px;
+}
+
+.input-container .eye-icon {
+  position: absolute;
+  top: 5px;
+  right: 40px;
+  cursor: pointer;
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 150px;
+  max-height: 150px;
+}

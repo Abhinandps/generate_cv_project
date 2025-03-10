@@ -1,0 +1,17 @@
+.multi-select-dropdown {
+  .selected-items {
+    background: whitesmoke;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    height: 20vh;
+    overflow-y: scroll;
+    span {
+      margin-bottom: 1em;
+    }
+  }
+  .dropdown-menu {
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+}

@@ -1,0 +1,36 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.fade.show {
+  display: block;
+  backdrop-filter: blur(3px);
+  z-index: 1050;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.btn-danger {
+  background-color: rgb(201, 23, 23);
+}
+
+.btn-secondary {
+  background-color: rgb(141, 139, 139);
+}

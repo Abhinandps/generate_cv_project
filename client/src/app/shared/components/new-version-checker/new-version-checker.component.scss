@@ -1,0 +1,21 @@
+.version-container {
+  background: #16a085;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+
+  img {
+    margin-top: 5px;
+  }
+  .content {
+    font-size: 14px;
+    color: var(--secondary-color);
+    font-weight: 400;
+
+    .description {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
