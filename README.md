@@ -1,4 +1,4 @@
-# Project Name
+# generate pdf
 
 A  web application that allows users to input their CV details, save them to a database, and generate a printable PDF version of the CV.
 
