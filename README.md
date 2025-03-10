@@ -12,8 +12,9 @@ A  web application that allows users to input their CV details, save them to a d
 
 1. Clone the repository:  
    ```sh
-   git clone [GitHub URL]
-   cd [Project Name]
+   git clone [[GitHub URL]](https://github.com/Abhinandps/generate_cv_project/)
+   cd client
+   cd server
    ```
 2. Install dependencies:  
    ```sh
